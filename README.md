@@ -36,6 +36,10 @@ IDE: Use of VSCode or Jupyter Notebook for coding, debugging, and visualization.
 
 Additional Dependencies: Includes Matplotlib and Seaborn for data visualization, along with SciPy for statistical analysis.
 
+## Output
+
+
+
 ## Results and impact
 
 The Marine Systems Failure Predictive System enhances the reliability and safety of maritime operations by predicting potential failures in ship components.
