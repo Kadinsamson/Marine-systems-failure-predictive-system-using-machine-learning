@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fault Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+        .warning {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Fault Detection Results</h1>
+    <div id="result" class="result">
+        <p>Waiting for data...</p>
+    </div>
+
+    <script>
+        // Create a WebSocket connection to the server
+        const socket = new WebSocket("ws://localhost:8765");
+
+        // Handle when the connection is opened
+        socket.onopen = function() {
+            console.log("Connected to WebSocket server");
+        };
+
+        // Handle incoming messages (live data from server)
+        socket.onmessage = function(event) {
+            const result = JSON.parse(event.data);
+
+            // Display the result on the webpage
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `
+                <h2>Predicted Values</h2>
+                <p>Compressor Decay: ${result.Predicted_Compressor_Decay}</p>
+                <p>Turbine Decay: ${result.Predicted_Turbine_Decay}</p>
+                <p>Time Before Failure (Compressor): ${result.Time_Before_Failure.Compressor}</p>
+                <p>Time Before Failure (Turbine): ${result.Time_Before_Failure.Turbine}</p>
+                <h3>Fault Detection</h3>
+                <p>Compressor Fault: ${result.Compressor_Fault_Detected}</p>
+                <p>Turbine Fault: ${result.Turbine_Fault}</p>
+                ${result.Warnings.length > 0 ? `<h3 class="warning">Warnings</h3><ul>${result.Warnings.map(w => `<li>${w}</li>`).join('')}</ul>` : ''}
+                ${result.Suggestions.length > 0 ? `<h3>Suggestions</h3><ul>${result.Suggestions.map(s => `<li>${s}</li>`).join('')}</ul>` : ''}
+            `;
+        };
+
+        // Handle WebSocket errors
+        socket.onerror = function(error) {
+            console.log(`WebSocket Error: ${error}`);
+        };
+
+        // Handle WebSocket closure
+        socket.onclose = function() {
+            console.log("WebSocket connection closed");
+        };
+
+        // Optionally, handle server disconnection and attempt to reconnect
+        socket.onclose = function(event) {
+            console.log("WebSocket closed. Reconnecting...");
+            setTimeout(function() {
+                connectWebSocket();
+            }, 1000); // Retry after 1 second
+        };
+
+        // Function to handle WebSocket connection
+        function connectWebSocket() {
+            socket = new WebSocket("ws://localhost:8765");
+        }
+    </script>
+
+</body>
+</html>
