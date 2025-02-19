@@ -38,7 +38,7 @@ Additional Dependencies: Includes Matplotlib and Seaborn for data visualization,
 
 ## Output
   ### Data overview 
-    ![dataoverview](https://github.com/user-attachments/assets/dddb6188-a95b-4f83-9dbb-e4d5b0a911ae)
+  ![dataoverview](https://github.com/user-attachments/assets/dddb6188-a95b-4f83-9dbb-e4d5b0a911ae)
   ### Real Time Parameter Trends
     ![realtime](https://github.com/user-attachments/assets/b7192498-01f4-44b6-8b01-4ef3ce40617e)
   ### Live Fault Detection and Maintenance Dashboard
