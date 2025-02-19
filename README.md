@@ -40,13 +40,13 @@ Additional Dependencies: Includes Matplotlib and Seaborn for data visualization,
   ### Data overview 
   ![dataoverview](https://github.com/user-attachments/assets/dddb6188-a95b-4f83-9dbb-e4d5b0a911ae)
   ### Real Time Parameter Trends
-    ![realtime](https://github.com/user-attachments/assets/b7192498-01f4-44b6-8b01-4ef3ce40617e)
+  ![realtime](https://github.com/user-attachments/assets/b7192498-01f4-44b6-8b01-4ef3ce40617e)
   ### Live Fault Detection and Maintenance Dashboard
-    ![Live fault](https://github.com/user-attachments/assets/3d4ecc5a-fefe-4fb8-83cc-2a98a1e03dd8)
+  ![Live fault](https://github.com/user-attachments/assets/3d4ecc5a-fefe-4fb8-83cc-2a98a1e03dd8)
   ### Compressor & Turbine Decay Predictions
-    ![C T decay ](https://github.com/user-attachments/assets/c51d029c-35de-421c-8b1e-c0df7aa6c973)
+  ![C T decay ](https://github.com/user-attachments/assets/c51d029c-35de-421c-8b1e-c0df7aa6c973)
   ### Histogram or Pie Graph
-    ![Histogram](https://github.com/user-attachments/assets/b1d36a73-a041-43d1-9a7c-283f11008a5e)
+  ![Histogram](https://github.com/user-attachments/assets/b1d36a73-a041-43d1-9a7c-283f11008a5e)
 
 ## Results and impact
 
